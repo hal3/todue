@@ -1,0 +1,655 @@
+<html>
+
+<head>
+<title>ToDue!</title>
+</head>
+
+<body style="background: #FFFFFF; background-repeat: no-repeat; background-size: cover;">
+<div id="due"></div>
+</body>
+
+<script>
+
+
+
+tz = {
+  "Afghanistan - Kabul": 113,
+  "Albania - Tirana": 284,
+  "Algeria - Algiers": 14,
+  "Andorra - Andorra La Vella": 686,
+  "Angola - Luanda": 138,
+  "Antigua and Barbuda - Saint John's": 688,
+  "Argentina - Buenos Aires": 51,
+  "Argentina - Córdoba - Córdoba": 485,
+  "Armenia - Yerevan": 370,
+  "Australia - Australian Capital Territory - Canberra": 57,
+  "Australia - New South Wales - Sydney": 240,
+  "Australia - Northern Territory - Alice Springs": 929,
+  "Australia - Northern Territory - Darwin": 72,
+  "Australia - Queensland - Brisbane": 47,
+  "Australia - Queensland - Cairns": 927,
+  "Australia - South Australia - Adelaide": 5,
+  "Australia - Tasmania - Hobart": 396,
+  "Australia - Victoria - Melbourne": 152,
+  "Australia - Western Australia - Eucla": 1980,
+  "Australia - Western Australia - Perth": 196,
+  "Austria - Vienna - Vienna": 259,
+  "Azerbaijan - Baku": 369,
+  "Bahamas - Nassau": 173,
+  "Bahrain - Manama": 15,
+  "Bangladesh - Dhaka": 73,
+  "Barbados - Bridgetown": 46,
+  "Belarus - Minsk": 285,
+  "Belgium - Brussels - Brussels": 48,
+  "Belize - Belmopan": 36,
+  "Benin - Porto Novo": 203,
+  "Bermuda - Hamilton": 38,
+  "Bhutan - Thimphu": 690,
+  "Bolivia - La Paz": 124,
+  "Bolivia - Sucre": 1888,
+  "Bosnia-Herzegovina - Sarajevo": 691,
+  "Botswana - Gaborone": 86,
+  "Brazil - Acre - Rio Branco": 752,
+  "Brazil - Amazonas - Manaus": 144,
+  "Brazil - Bahia - Salvador": 222,
+  "Brazil - Ceará - Fortaleza": 491,
+  "Brazil - Distrito Federal - Brasilia": 45,
+  "Brazil - Pará - Belém": 446,
+  "Brazil - Pernambuco - Recife": 209,
+  "Brazil - Rio de Janeiro - Rio de Janeiro": 213,
+  "Brazil - São Paulo - São Paulo": 233,
+  "British Indian Ocean Territory - Diego Garcia": 932,
+  "Brunei - Bandar Seri Begawan": 693,
+  "Bulgaria - Sofia": 238,
+  "Burkina Faso - Ouagadougou": 186,
+  "Burundi - Bujumbura": 52,
+  "Burundi - Gitega": 3446,
+  "Cabo Verde - Praia": 685,
+  "Cambodia - Phnom Penh": 199,
+  "Cameroon - Yaoundé": 267,
+  "Canada - Alberta - Calgary": 55,
+  "Canada - Alberta - Edmonton": 80,
+  "Canada - British Columbia - Vancouver": 256,
+  "Canada - Manitoba - Winnipeg": 265,
+  "Canada - New Brunswick - Saint John": 749,
+  "Canada - Newfoundland and Labrador - Happy Valley-Goose Bay": 1137,
+  "Canada - Newfoundland and Labrador - Mary's Harbour": 4880,
+  "Canada - Newfoundland and Labrador - St. John's": 175,
+  "Canada - Northwest Territories - Inuvik": 1145,
+  "Canada - Northwest Territories - Yellowknife": 678,
+  "Canada - Nova Scotia - Halifax": 286,
+  "Canada - Nunavut - Alert": 3368,
+  "Canada - Nunavut - Baker Lake": 1157,
+  "Canada - Nunavut - Coral Harbour": 1160,
+  "Canada - Nunavut - Eureka": 3764,
+  "Canada - Nunavut - Grise Fiord": 3801,
+  "Canada - Nunavut - Pond Inlet": 1164,
+  "Canada - Nunavut - Resolute Bay": 2380,
+  "Canada - Ontario - Ottawa": 188,
+  "Canada - Ontario - Toronto": 250,
+  "Canada - Quebec - Blanc-Sablon": 1922,
+  "Canada - Quebec - Chibougamau": 2438,
+  "Canada - Quebec - Kuujjuaq": 3768,
+  "Canada - Quebec - Montréal": 165,
+  "Canada - Quebec - Québec": 189,
+  "Canada - Saskatchewan - Regina": 210,
+  "Canada - Yukon - Whitehorse": 679,
+  "Cayman Islands - George Town": 377,
+  "Central African Republic - Bangui": 694,
+  "Chad - N'Djamena": 174,
+  "Chile - Easter Island": 914,
+  "Chile - Punta Arenas": 574,
+  "Chile - Santiago": 232,
+  "China - Beijing Municipality - Beijing": 33,
+  "China - Chongqing Municipality - Chongqing": 470,
+  "China - Guangdong - Shenzhen": 1232,
+  "China - Jiangsu - Suzhou": 2148,
+  "China - Shanghai Municipality - Shanghai": 237,
+  "China - Tibet - Lhasa": 918,
+  "China - Xinjiang - Ürümqi": 655,
+  "Colombia - Bogota": 41,
+  "Comoros - Moroni": 696,
+  "Congo - Brazzaville": 926,
+  "Congo Dem. Rep. - Kinshasa": 121,
+  "Congo Dem. Rep. - Lubumbashi": 139,
+  "Cook Islands - Rarotonga": 279,
+  "Costa Rica - San Jose": 225,
+  "Cote d'Ivoire (Ivory Coast) - Abidjan": 1,
+  "Cote d'Ivoire (Ivory Coast) - Yamoussoukro": 935,
+  "Croatia - Zagreb": 281,
+  "Cuba - Havana": 99,
+  "Cyprus - Nicosia": 680,
+  "Czech Republic - Prague": 204,
+  "Denmark - Copenhagen": 69,
+  "Djibouti - Djibouti": 697,
+  "Dominica - Roseau": 698,
+  "Dominican Republic - Santo Domingo": 230,
+  "Ecuador - Galapagos Islands": 915,
+  "Ecuador - Guayaquil": 93,
+  "Ecuador - Quito": 190,
+  "Egypt - Cairo": 53,
+  "El Salvador - San Salvador": 228,
+  "Equatorial Guinea - Malabo": 699,
+  "Eritrea - Asmara": 700,
+  "Estonia - Tallinn": 242,
+  "eSwatini - Mbabane": 149,
+  "Ethiopia - Addis Ababa": 7,
+  "Falkland Islands - Stanley": 630,
+  "Faroe Islands - Tórshavn": 701,
+  "Fiji - Suva": 82,
+  "Finland - Helsinki": 101,
+  "Finland - Kemi": 3718,
+  "Finland - Rovaniemi": 1401,
+  "France - Île-de-France - Paris": 195,
+  "French Guiana - Cayenne": 61,
+  "French Polynesia - Tahiti - Papeete": 278,
+  "French Southern Territories - Amsterdam Island": 3658,
+  "French Southern Territories - Port-aux-Francais": 397,
+  "Gabon - Libreville": 129,
+  "Gambia - Banjul": 30,
+  "Georgia - Tbilisi": 371,
+  "Germany - Berlin - Berlin": 37,
+  "Germany - Hesse - Frankfurt": 83,
+  "Ghana - Accra": 4,
+  "Gibraltar - Gibraltar": 89,
+  "Greece - Athens": 26,
+  "Greenland - Danmarkshavn": 2114,
+  "Greenland - Ittoqqortoormiit": 705,
+  "Greenland - Kangerlussuaq": 4217,
+  "Greenland - Nuuk": 703,
+  "Greenland - Qaanaaq": 3724,
+  "Greenland - Thule Air Base": 704,
+  "Grenada - Saint George's": 706,
+  "Guadeloupe - Basse-Terre": 707,
+  "Guam - Hagåtña": 91,
+  "Guatemala - Guatemala City": 94,
+  "Guinea - Conakry": 67,
+  "Guinea-Bissau - Bissau": 40,
+  "Guyana - Georgetown": 88,
+  "Haiti - Port-au-Prince": 709,
+  "Honduras - Tegucigalpa": 245,
+  "Hong Kong - Hong Kong": 102,
+  "Hungary - Budapest": 50,
+  "Iceland - Reykjavik": 211,
+  "India - Bihar - Patna": 1040,
+  "India - Delhi - Delhi": 771,
+  "India - Delhi - New Delhi": 176,
+  "India - Gujarat - Surat": 1039,
+  "India - Karnataka - Bangalore": 438,
+  "India - Kerala - Thiruvananthapuram": 1892,
+  "India - Madhya Pradesh - Indore": 1041,
+  "India - Maharashtra - Mumbai": 44,
+  "India - Maharashtra - Pune": 1038,
+  "India - Odisha - Bhubaneshwar": 1042,
+  "India - Punjab - Ahmedgarh": 4498,
+  "India - Punjab - Ludhiana": 1043,
+  "India - Tamil Nadu - Chennai": 553,
+  "India - Tamil Nadu - Madurai": 1047,
+  "India - Uttar Pradesh - Agra": 1046,
+  "India - Uttar Pradesh - Varanasi": 1045,
+  "India - West Bengal - Kolkata": 54,
+  "Indonesia - Bali - Denpasar": 761,
+  "Indonesia - East Java - Surabaya": 631,
+  "Indonesia - East Kalimantan - Balikpapan": 434,
+  "Indonesia - Jakarta Special Capital Region - Jakarta": 108,
+  "Indonesia - North Sulawesi - Manado": 555,
+  "Indonesia - Papua - Jayapura": 759,
+  "Indonesia - South Sulawesi - Makassar": 653,
+  "Indonesia - West Java - Bandung": 437,
+  "Indonesia - West Kalimantan - Pontianak": 2120,
+  "Indonesia - West Papua - Manokwari": 2436,
+  "Iran - Tehran": 246,
+  "Iraq - Baghdad": 27,
+  "Ireland - Dublin": 78,
+  "Isle of Man - Douglas": 716,
+  "Israel - Jerusalem": 110,
+  "Israel - Tel Aviv": 676,
+  "Italy - Milan": 157,
+  "Italy - Rome": 215,
+  "Jamaica - Kingston": 120,
+  "Japan - Kobe": 540,
+  "Japan - Kyoto": 538,
+  "Japan - Nagoya": 565,
+  "Japan - Osaka": 671,
+  "Japan - Sapporo": 622,
+  "Japan - Tokyo": 248,
+  "Japan - Yokohama": 667,
+  "Jordan - Amman": 11,
+  "Kazakhstan - Almaty": 382,
+  "Kazakhstan - Aqtobe": 916,
+  "Kazakhstan - Nursultan": 921,
+  "Kazakhstan - Oral": 2352,
+  "Kenya - Nairobi": 170,
+  "Kiribati - Christmas Island - Kiritimati": 274,
+  "Kiribati - Tarawa": 675,
+  "Kosovo - Pristina": 743,
+  "Kuwait - Kuwait City": 123,
+  "Kyrgyzstan - Bishkek": 384,
+  "Laos - Vientiane": 260,
+  "Latvia - Riga": 602,
+  "Lebanon - Beirut": 34,
+  "Lesotho - Maseru": 147,
+  "Liberia - Monrovia": 161,
+  "Libya - Tripoli": 252,
+  "Liechtenstein - Vaduz": 714,
+  "Lithuania - Vilnius": 660,
+  "Luxembourg - Luxembourg": 534,
+  "Madagascar - Antananarivo": 20,
+  "Malawi - Lilongwe": 130,
+  "Malaysia - Kuala Lumpur - Kuala Lumpur": 122,
+  "Maldives - Male": 715,
+  "Mali - Bamako": 29,
+  "Mali - Timbuktu": 2328,
+  "Malta - Valletta": 255,
+  "Marshall Islands - Majuro": 717,
+  "Martinique - Fort-de-France": 718,
+  "Mauritania - Nouakchott": 183,
+  "Mauritius - Port Louis": 201,
+  "Mexico - Aguascalientes - Aguascalientes": 9,
+  "Mexico - Baja California - Mexicali": 154,
+  "Mexico - Baja California - Tijuana": 247,
+  "Mexico - Ciudad de México - Mexico City": 155,
+  "Mexico - Guerrero - Acapulco": 3,
+  "Mexico - Jalisco - Guadalajara": 92,
+  "Mexico - Quintana Roo - Cancún": 923,
+  "Mexico - Sinaloa - Mazatlan": 148,
+  "Mexico - Sonora - Hermosillo": 503,
+  "Mexico - Veracruz - Veracruz": 258,
+  "Micronesia - Pohnpei - Palikir": 1072,
+  "Moldova - Chișinău": 177,
+  "Monaco - Monaco": 674,
+  "Mongolia - Hovd": 950,
+  "Mongolia - Ulaanbaatar": 720,
+  "Montenegro - Podgorica": 744,
+  "Morocco - Casablanca": 60,
+  "Morocco - Rabat": 206,
+  "Mozambique - Maputo": 146,
+  "Myanmar - Naypyidaw": 1981,
+  "Myanmar - Yangon": 208,
+  "Namibia - Windhoek": 266,
+  "Nauru - Yaren": 276,
+  "Nepal - Kathmandu": 117,
+  "Netherlands - Amsterdam": 16,
+  "New Zealand - Auckland - Auckland": 22,
+  "New Zealand - Chatham Islands - Chatham Islands": 63,
+  "New Zealand - Wellington - Wellington": 264,
+  "Nicaragua - Managua": 143,
+  "Niger - Niamey": 180,
+  "Nigeria - Abuja": 742,
+  "Nigeria - Lagos": 125,
+  "Niue - Alofi": 724,
+  "North Korea - Pyongyang": 205,
+  "North Macedonia - Skopje": 673,
+  "Norway - Svalbard - Longyearbyen": 737,
+  "Norway - Oslo": 187,
+  "Norway - Tromsø": 290,
+  "Oman - Muscat": 169,
+  "Pakistan - Islamabad": 106,
+  "Pakistan - Sindh - Karachi": 757,
+  "Pakistan - Lahore": 756,
+  "Palau - Ngerulmud": 5606,
+  "Panama - Panama": 192,
+  "Papua New Guinea - Port Moresby": 193,
+  "Paraguay - Asuncion": 21,
+  "Peru - Lima - Lima": 131,
+  "Philippines - Manila": 145,
+  "Pitcairn Islands - Adamstown": 755,
+  "Poland - Warsaw": 262,
+  "Portugal - Azores - Ponta Delgada": 271,
+  "Portugal - Lisbon - Lisbon": 133,
+  "Puerto Rico - San Juan": 226,
+  "Qatar - Doha": 8,
+  "Réunion (French) - Saint-Denis": 216,
+  "Romania - Bucharest": 49,
+  "Russia - Arkhangelsk - Belushya Guba": 2437,
+  "Russia - Bashkortostan - Ufa": 356,
+  "Russia - Chelyabinsk - Chelyabinsk": 373,
+  "Russia - Chukotka - Anadyr": 17,
+  "Russia - Chukotka - Pevek": 3795,
+  "Russia - Irkutsk - Irkutsk": 378,
+  "Russia - Kaliningrad - Kaliningrad": 528,
+  "Russia - Kamchatka - Petropavlovsk-Kamchatsky": 114,
+  "Russia - Khabarovsk - Komsomolsk-on-Amur": 2439,
+  "Russia - Krasnoyarsk - Khatanga": 3735,
+  "Russia - Krasnoyarsk - Krasnoyarsk": 372,
+  "Russia - Krasnoyarsk - Norilsk": 381,
+  "Russia - Magadan - Magadan": 380,
+  "Russia - Moscow - Moscow": 166,
+  "Russia - Murmansk - Murmansk": 167,
+  "Russia - Novgorod - Novgorod": 353,
+  "Russia - Novosibirsk - Novosibirsk": 375,
+  "Russia - Omsk - Omsk": 374,
+  "Russia - Perm - Perm": 357,
+  "Russia - Primorsky - Vladivostok": 261,
+  "Russia - Saint Petersburg - Saint-Petersburg": 352,
+  "Russia - Sakha (Yakutia) - Srednekolymsk": 4211,
+  "Russia - Sakha (Yakutia) - Tiksi": 3769,
+  "Russia - Sakha (Yakutia) - Verkhoyansk": 3767,
+  "Russia - Sakha (Yakutia) - Yakutsk": 1907,
+  "Russia - Sakhalin - Yuzhno-Sakhalinsk": 1245,
+  "Russia - Samara - Samara": 355,
+  "Russia - Sverdlovsk - Yekaterinburg": 358,
+  "Russia - Tatarstan - Kazan": 354,
+  "Russia - Udmurtia - Izhevsk": 364,
+  "Russia - Zabaykalsky - Chita": 4096,
+  "Rwanda - Kigali": 119,
+  "Saint Helena - Jamestown": 727,
+  "Saint Kitts and Nevis - Basseterre": 728,
+  "Saint Lucia - Castries": 729,
+  "Saint Vincent and Grenadines - Kingstown": 731,
+  "Samoa - Apia": 282,
+  "San Marino - San Marino": 732,
+  "Sao Tome and Principe - São Tomé": 733,
+  "Saudi Arabia - Makkah": 151,
+  "Saudi Arabia - Medina": 1942,
+  "Saudi Arabia - Riyadh": 214,
+  "Senegal - Dakar": 74,
+  "Serbia - Belgrade": 35,
+  "Seychelles - Victoria": 734,
+  "Sierra Leone - Freetown": 85,
+  "Singapore - Singapore": 236,
+  "Slovakia - Bratislava": 735,
+  "Slovenia - Ljubljana": 736,
+  "Solomon Islands - Honiara": 273,
+  "Somalia - Mogadishu": 160,
+  "South Africa - Cape Town": 56,
+  "South Africa - Johannesburg": 111,
+  "South Africa - Marion Island (Prince Edward Islands)": 3401,
+  "South Africa - Pretoria": 269,
+  "South Georgia/Sandwich Is. - King Edward Point": 1985,
+  "South Korea - Seoul": 235,
+  "South Sudan - Juba": 2171,
+  "Spain - Barcelona - Barcelona": 31,
+  "Spain - Madrid": 141,
+  "Spain - Majorca - Palma": 191,
+  "Sri Lanka - Colombo": 389,
+  "Sri Lanka - Sri Jayawardenepura Kotte": 1925,
+  "Sudan - Khartoum": 118,
+  "Suriname - Paramaribo": 194,
+  "Sweden - Stockholm": 239,
+  "Switzerland - Bern - Bern": 270,
+  "Switzerland - Geneva - Geneva": 87,
+  "Switzerland - Zurich - Zürich": 268,
+  "Syria - Damascus": 487,
+  "Taiwan - Taipei": 241,
+  "Tajikistan - Dushanbe": 385,
+  "Tanzania - Dar es Salaam": 71,
+  "Tanzania - Dodoma": 1030,
+  "Thailand - Bangkok": 28,
+  "Timor-Leste - Dili": 768,
+  "Togo - Lomé": 135,
+  "Tokelau - Fakaofo": 738,
+  "Tonga - Nukualofa": 277,
+  "Trinidad and Tobago - Port of Spain": 588,
+  "Tunisia - Tunis": 253,
+  "Turkey - Ankara": 19,
+  "Turkey - Istanbul": 107,
+  "Turkmenistan - Ashgabat": 387,
+  "Tuvalu - Funafuti": 272,
+  "Uganda - Kampala": 115,
+  "Ukraine - Dnipropetrovsk - Dnipro": 4060,
+  "Ukraine - Kyiv - Kyiv": 367,
+  "Ukraine - Odessa - Odesa": 366,
+  "United Arab Emirates - Abu Dhabi - Abu Dhabi": 2,
+  "United Arab Emirates - Dubai - Dubai": 776,
+  "United Kingdom - England - London": 136,
+  "United Kingdom - Northern Ireland - Belfast": 919,
+  "United Kingdom - Scotland - Edinburgh": 304,
+  "United Kingdom - Scotland - Glasgow": 90,
+  "United Kingdom - Wales - Cardiff": 298,
+  "Uruguay - Montevideo": 163,
+  "US Minor Outlying Islands - Baker Island": 3399,
+  "US Minor Outlying Islands - Midway": 1890,
+  "US Minor Outlying Islands - Wake Island": 2131,
+  "USA - Alabama - Montgomery": 407,
+  "USA - Alaska - Adak": 13,
+  "USA - Alaska - Anchorage": 18,
+  "USA - Alaska - Fairbanks": 81,
+  "USA - Alaska - Juneau": 112,
+  "USA - Alaska - Unalaska": 931,
+  "USA - Arizona - Phoenix": 197,
+  "USA - Arkansas - Little Rock": 134,
+  "USA - California - Los Angeles": 137,
+  "USA - California - Sacramento": 217,
+  "USA - California - San Diego": 770,
+  "USA - California - San Francisco": 224,
+  "USA - California - San Jose": 283,
+  "USA - Colorado - Denver": 75,
+  "USA - Connecticut - Hartford": 98,
+  "USA - Delaware - Dover": 1029,
+  "USA - District of Columbia - Washington DC": 263,
+  "USA - Florida - Miami": 156,
+  "USA - Florida - Orlando": 867,
+  "USA - Florida - Pensacola": 944,
+  "USA - Georgia - Atlanta": 25,
+  "USA - Hawaii - Honolulu": 103,
+  "USA - Idaho - Boise": 42,
+  "USA - Illinois - Chicago": 64,
+  "USA - Indiana - Indianapolis": 105,
+  "USA - Iowa - Des Moines": 76,
+  "USA - Kansas - Topeka": 249,
+  "USA - Kentucky - Louisville": 413,
+  "USA - Louisiana - New Orleans": 178,
+  "USA - Maine - Augusta": 23,
+  "USA - Maryland - Baltimore": 419,
+  "USA - Massachusetts - Boston": 43,
+  "USA - Michigan - Detroit": 77,
+  "USA - Minnesota - Minneapolis": 159,
+  "USA - Minnesota - St. Paul": 219,
+  "USA - Mississippi - Jackson": 515,
+  "USA - Missouri - Kansas City": 405,
+  "USA - Missouri - St. Louis": 605,
+  "USA - Montana - Billings": 448,
+  "USA - Nebraska - Lincoln": 132,
+  "USA - Nevada - Las Vegas": 127,
+  "USA - New Hampshire - Concord": 68,
+  "USA - New Jersey - Newark": 861,
+  "USA - New Mexico - Albuquerque": 394,
+  "USA - New York - New York": 179,
+  "USA - North Carolina - Raleigh": 207,
+  "USA - North Dakota - Bismarck": 39,
+  "USA - Ohio - Columbus": 805,
+  "USA - Oklahoma - Oklahoma City": 184,
+  "USA - Oregon - Portland": 202,
+  "USA - Oregon - Salem": 221,
+  "USA - Pennsylvania - Philadelphia": 198,
+  "USA - Rhode Island - Providence": 878,
+  "USA - South Carolina - Columbia": 66,
+  "USA - South Dakota - Rapid City": 1920,
+  "USA - South Dakota - Sioux Falls": 627,
+  "USA - Tennessee - Knoxville": 843,
+  "USA - Tennessee - Nashville": 171,
+  "USA - Texas - Austin": 24,
+  "USA - Texas - Dallas": 70,
+  "USA - Texas - Houston": 104,
+  "USA - Texas - Midland": 1921,
+  "USA - Utah - Salt Lake City": 220,
+  "USA - Vermont - Montpelier": 164,
+  "USA - Virginia - Richmond": 212,
+  "USA - Washington - Seattle": 234,
+  "USA - West Virginia - Charleston": 62,
+  "USA - Wisconsin - Madison": 142,
+  "USA - Wisconsin - Milwaukee": 158,
+  "USA - Wyoming - Cheyenne": 778,
+  "Uzbekistan - Tashkent": 244,
+  "Vanuatu - Port Vila": 280,
+  "Vatican City State - Vatican City": 710,
+  "Venezuela - Caracas": 58,
+  "Vietnam - Hanoi": 95,
+  "Vietnam - Ho Chi Minh": 218,
+  "Western Sahara - El Aaiún": 741,
+  "Yemen - Aden": 6,
+  "Yemen - Sana": 672,
+  "Zambia - Lusaka": 140,
+  "Zimbabwe - Harare": 96,
+}
+
+// shortcuts
+tz['AOE'] = 3400;
+tz['NYC'] = tz['USA - New York - New York'];
+tz['LA' ] = tz['USA - California - Los Angeles'];
+
+now = new Date();
+nowd = Date.UTC(now.getYear()+1900, now.getMonth(), now.getDate()  );
+
+function urgency(y, m, d) {
+  ddl = Date.UTC(2000+parseInt(y), m-1, d);
+  diff = (ddl - nowd) / (1000*60*60*24);
+  if (nowd > ddl) { return 0; }
+  else if (diff <= 1) { return 1; }
+  else if (diff <= 7) { return 2; }
+  else if (diff <= 14) { return 3; }
+  else if (diff <= 30) { return 4; }
+  else if (diff <= 60) { return 5; }
+  return 6;
+}
+
+color_plain = '000';
+color_urgent = 'f00';
+
+function mkiframe(head, datetime, timezone) {
+  y = datetime.substring(2,4);
+  m = datetime.substring(5,7);
+  d = datetime.substring(8,10);
+  h = datetime.substring(11, 13);
+  n = datetime.substring(14, 16);
+  if (h == 0) { h = "12"; n += 'a' }
+  else if (h < 12) { n += 'a'; }
+  else if (h == 12) { n += 'p'; }
+  else { h = (h-12); n += 'p'; }
+  subhead = '' + m + '-' + d + '-' + y + ', ' + h + ':' + n + ' ' + timezone;
+  head = encodeURIComponent(head);
+  subhead = encodeURIComponent(subhead);
+  u = urgency(y, m, d);
+  urgent = u > 0 && u <= 2;
+  color = urgent ? color_urgent : color_plain; // 'f00' : '000';
+  size = urgent ? '/szw448/szh189' : '/szw320/szh135';
+  wh = urgent ? 'width="350" height="105"' : 'width="250" height="90"'
+  return [u, '<iframe src="http://free.timeanddate.com/countdown/i6y5phdy/n' + tz[timezone] + '/cf12/cm0/cu3/ct4/cs1/ca0/cr0/ss0/cac' + color + '/cpc777/pct/tcfff/fn3/fs100' + size + '/tat' + head + '/tac' + color + '/tpt' + head + '/tpc777/mat' + subhead + '/mac' + color + '/mpt' + subhead + '/mpc777/iso' + datetime + '/pa8" allowTransparency="true" frameborder="0" ' + wh + '></iframe>'];
+}
+
+function populateWithText(text) {
+  due = document.getElementById("due");
+  due.innerHTML = '';
+  allitems = [];
+  /*
+  var lines = text.trim().split(/\s*[\r\n]+\s* ?/g);
+  for (i=0; i<lines.length; i++) {
+    if (lines[i].startsWith('background: ')) {
+      document.body.style.backgroundImage = "url('" + lines[i].substring(12) + "')";
+    } else if (lines[i].startsWith('color_plain: ')) {
+      color_plain = lines[i].substring(13);
+    } else if (lines[i].startsWith('color_urgent: ')) {
+      color_urgent = lines[i].substring(14);
+    } else {
+      items = lines[i].trim().split(/\s*\|\|\|\s* ?/g);
+      if (items.length == 3) {
+        approxtime = items[1];
+        allitems.push([approxtime, items[0], items[1], items[2]]);
+      }
+    }
+  }
+  */
+  json = JSON.parse(text);
+  if ('background' in json) {
+    document.body.style.backgroundImage = "url('" + json['background'] + "')";
+  }
+  if ('color_plain' in json) { color_plain = json['color_plain']; }
+  if ('color_urgent' in json) { color_urgent = json['color_urgent']; }
+  if ('deadlines' in json) {
+    for (i in json['deadlines']) {
+      ddl = json['deadlines'][i];
+      if (ddl.length == 3) {
+        allitems.push([ddl[1], ddl[0], ddl[1], ddl[2]]);
+      }
+    }
+  } else {
+    due.innerHTML = 'Error: no deadlines specified in input';
+  }
+
+  allitems = allitems.sort();
+  last_u = -1;
+  past = '';
+  for (i=0; i<allitems.length; i++) {
+    [u, frame] = mkiframe(allitems[i][1], allitems[i][2], allitems[i][3]);
+    if (u == 0) { past += frame; }
+    else {
+      if (last_u != u) {
+        uu = (u == 1) ? "Today" : (u == 2) ? "This Week" : (u == 3) ? "Next Week" : (u == 4) ? "This Month" : (u == 5) ? "Next Month" : "Later..."
+        due.innerHTML += "<h2>" + uu + "</h2>"
+        last_u = u;
+      }
+      due.innerHTML += frame;
+    }
+  }
+  if (past.length > 0) {
+    due.innerHTML += "<h2>Past</h2>" + past;
+  }
+}
+
+qry = window.location.search;
+if (qry.length == 0) {
+  due.innerHTML = "Usage: browse to this location with ?(some_url) appended to the search string, where some_url is a data file specifying deadlines. For example, http://hal3.name/todue.html?http://hal3.name/todue.json. To see how to use, look at that .data file. You can use 'test' instead of some_url for debugging."
+} else if (qry == "?test") {
+  tempText = `
+    {
+      "background": "http://blog.visme.co/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-03.jpg",
+      "color_plain": "00f",
+      "color_urgent": "f00",
+      "deadlines": [
+        ["CHI Abstracts",    "2019-09-13T15:00:00", "NYC"],
+        ["CHI Papers",       "2019-09-20T15:00:00", "NYC"],
+        ["CHI Response",     "2019-11-22T15:00:00", "NYC"],
+        ["CHI Notification", "2019-12-09T15:00:00", "NYC"],
+
+        ["ICLR Papers",       "2019-09-25T11:00:00", "NYC"],
+        ["ICLR Response",     "2019-11-15T17:00:00", "NYC"],
+        ["ICLR Notification", "2019-12-19T17:00:00", "NYC"],
+
+        ["AIStats Papers",       "2019-10-09T03:59:00", "NYC"],
+        ["AIStats Response",     "2019-11-26T03:59:00", "NYC"],
+        ["AIStats Notification", "2020-01-07T03:59:00", "NYC"],
+
+        ["WWW Abstracts",    "2019-10-07T23:59:00", "AOE"],
+        ["WWW Papers",       "2019-10-14T23:59:00", "AOE"],
+        ["WWW Notification", "2020-01-10T23:59:00", "AOE"],
+
+        ["ICML Abstracts",    "2020-01-31T23:59:00", "AOE"],
+        ["ICML Papers",       "2020-02-07T23:59:00", "AOE"],
+        ["ICML Response",     "2020-04-08T23:59:00", "AOE"],
+        ["ICML Notification", "2020-05-09T23:59:00", "AOE"],
+
+        ["CVPR Papers",       "2019-11-16T03:59:00", "NYC"],
+        ["CVPR Notification", "2020-02-24T03:59:00", "NYC"],
+
+        ["NSF Medium", "2019-09-30T12:00:00", "NYC"],
+        ["Google FRA", "2019-09-30T16:00:00", "NYC"],
+        ["Amazon FRA", "2019-10-05T03:59:00", "NYC"]
+      ]
+    }
+`;
+  populateWithText(tempText);
+} else {
+  try {
+    var request = new XMLHttpRequest();
+    loc = qry.substring(1);
+    due.innerHTML = 'Loading data from ' + loc;
+    request.onreadystatechange = function () {
+      if (request.readyState === 4 && request.status === 200) {
+        var type = request.getResponseHeader('Content-Type');
+        if (true || type.indexOf('text') !== 1) {    
+          populateWithText(request.responseText)
+        }
+      }
+    }
+    request.open('GET', loc, true);
+    request.send();
+  } catch(err) {
+    due.innerHTML = "Error: " + err.message;
+  }
+}
+
+
+</script>
+
+</html>

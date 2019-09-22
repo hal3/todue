@@ -1,0 +1,35 @@
+{
+    "background": "http://blog.visme.co/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-03.jpg",
+    "color_plain": "00f",
+    "color_urgent": "f00",
+    "deadlines": [
+        ["CHI Abstracts",    "2019-09-13T15:00:00", "NYC"],
+        ["CHI Papers",       "2019-09-20T15:00:00", "NYC"],
+        ["CHI Response",     "2019-11-22T15:00:00", "NYC"],
+        ["CHI Notification", "2019-12-09T15:00:00", "NYC"],
+
+        ["ICLR Papers",       "2019-09-25T11:00:00", "NYC"],
+        ["ICLR Response",     "2019-11-15T17:00:00", "NYC"],
+        ["ICLR Notification", "2019-12-19T17:00:00", "NYC"],
+
+        ["AIStats Papers",       "2019-10-09T03:59:00", "NYC"],
+        ["AIStats Response",     "2019-11-26T03:59:00", "NYC"],
+        ["AIStats Notification", "2020-01-07T03:59:00", "NYC"],
+
+        ["WWW Abstracts",    "2019-10-07T23:59:00", "AOE"],
+        ["WWW Papers",       "2019-10-14T23:59:00", "AOE"],
+        ["WWW Notification", "2020-01-10T23:59:00", "AOE"],
+
+        ["ICML Abstracts",    "2020-01-31T23:59:00", "AOE"],
+        ["ICML Papers",       "2020-02-07T23:59:00", "AOE"],
+        ["ICML Response",     "2020-04-08T23:59:00", "AOE"],
+        ["ICML Notification", "2020-05-09T23:59:00", "AOE"],
+
+        ["CVPR Papers",       "2019-11-16T03:59:00", "NYC"],
+        ["CVPR Notification", "2020-02-24T03:59:00", "NYC"],
+
+        ["NSF Medium", "2019-09-30T12:00:00", "NYC"],
+        ["Google FRA", "2019-09-30T16:00:00", "NYC"],
+        ["Amazon FRA", "2019-10-05T03:59:00", "NYC"]
+    ]
+}
