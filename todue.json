@@ -35,6 +35,11 @@
         ["ICML Response",     "2020-04-08T23:59:00", "AOE"],
         ["ICML Notification", "2020-05-09T23:59:00", "AOE"],
 
+        ["IJCAI Abstracts",    "2020-01-15T23:59:00", "AOE"],
+        ["IJCAI Papers",       "2020-01-21T23:59:00", "AOE"],
+        ["IJCAI Response",     "2020-03-25T23:59:00", "AOE"],
+        ["IJCAI Notification", "2020-04-19T23:59:00", "AOE"],
+
         ["NSF Medium", "2019-09-30T12:00:00", "NYC"],
         ["Google FRA", "2019-09-30T16:00:00", "NYC"],
         ["Amazon FRA", "2019-10-05T03:59:00", "NYC"]
