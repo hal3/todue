@@ -31,6 +31,14 @@
 
         ["LREC Papers",     "2019-11-25T23:59:00", "AOE"],
         ["skip", "LREC Notifications", "", "AOE"],
+
+        ["ACL Papers",       "2019-12-09T23:59:00", "AOE"],
+        ["skip", "ACL Response",     "2020-04-08T23:59:00", "AOE"],
+        ["ACL Notification", "2020-04-03T23:59:00", "AOE"],
+
+        ["COLING Papers",       "2020-04-08T23:59:00", "AOE"],
+        ["skip", "COLING Response",     "2020-04-08T23:59:00", "AOE"],
+        ["COLING Notification", "2020-06-10T23:59:00", "AOE"],
         
         ["ICML Abstracts",    "2020-01-31T23:59:00", "AOE"],
         ["ICML Papers",       "2020-02-07T23:59:00", "AOE"],
@@ -43,6 +51,7 @@
         ["IJCAI Notification", "2020-04-19T23:59:00", "AOE"],
 
         ["NSF Medium", "2019-09-30T12:00:00", "NYC"],
+        ["NSF Small",  "2019-11-14T12:00:00", "NYC"],
         ["Google FRA", "2019-09-30T16:00:00", "NYC"],
         ["Amazon FRA", "2019-10-05T03:59:00", "NYC"]
     ]
