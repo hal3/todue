@@ -3,69 +3,69 @@
     "color_plain": "00f",
     "color_urgent": "f00",
     "deadlines": [
-        ["####", "CHI Abstracts",    "2019-09-13T15:00:00", "NYC"],
-        ["####", "CHI Papers",       "2019-09-20T15:00:00", "NYC"],
-        ["####", "CHI Response",     "2019-11-22T15:00:00", "NYC"],
-        ["####", "CHI Notification", "2019-12-09T15:00:00", "NYC"],
+        ["skip", "CHI Abstracts",    "2019-09-13T15:00:00", "NYC"],
+        ["skip", "CHI Papers",       "2019-09-20T15:00:00", "NYC"],
+        ["skip", "CHI Response",     "2019-11-22T15:00:00", "NYC"],
+        ["skip", "CHI Notification", "2019-12-09T15:00:00", "NYC"],
 
-        ["####", "ICLR Papers",       "2019-09-25T11:00:00", "NYC"],
-        ["####", "ICLR Response",     "2019-11-15T17:00:00", "NYC"],
-        ["####", "ICLR Notification", "2019-12-19T17:00:00", "NYC"],
+        ["skip", "ICLR Papers",       "2019-09-25T11:00:00", "NYC"],
+        ["skip", "ICLR Response",     "2019-11-15T17:00:00", "NYC"],
+        ["skip", "ICLR Notification", "2019-12-19T17:00:00", "NYC"],
 
-        ["####", "IUI Abstracts",    "2019-10-01T23:59:00", "AOE"],
-        ["####", "IUI Papers",       "2019-10-09T23:59:00", "AOE"],
-        ["####", "IUI Notification", "2019-12-12T23:59:00", "AOE"],
+        ["skip", "IUI Abstracts",    "2019-10-01T23:59:00", "AOE"],
+        ["skip", "IUI Papers",       "2019-10-09T23:59:00", "AOE"],
+        ["skip", "IUI Notification", "2019-12-12T23:59:00", "AOE"],
 
-        ["####", "AIStats Papers",       "2019-10-09T02:59:00", "NYC"],
-        ["####", "AIStats Response",     "2019-11-26T02:59:00", "NYC"],
-        ["####", "AIStats Notification", "2020-01-07T02:59:00", "NYC"],
+        ["skip", "AIStats Papers",       "2019-10-09T02:59:00", "NYC"],
+        ["skip", "AIStats Response",     "2019-11-26T02:59:00", "NYC"],
+        ["skip", "AIStats Notification", "2020-01-07T02:59:00", "NYC"],
 
-        ["####", "Human-Comp NeurIPS CR", "2019-10-30T17:00:00", "NYC"],
+        ["skip", "Human-Comp NeurIPS CR", "2019-10-30T17:00:00", "NYC"],
         
-        ["####", "WWW Abstracts",    "2019-10-07T23:59:00", "AOE"],
-        ["####", "WWW Papers",       "2019-10-14T23:59:00", "AOE"],
-        ["####", "WWW Notification", "2020-01-10T23:59:00", "AOE"],
+        ["skip", "WWW Abstracts",    "2019-10-07T23:59:00", "AOE"],
+        ["skip", "WWW Papers",       "2019-10-14T23:59:00", "AOE"],
+        ["skip", "WWW Notification", "2020-01-10T23:59:00", "AOE"],
         
-        ["####", "CVPR Papers",       "2019-11-16T02:59:00", "NYC"],
-        ["####", "CVPR Notification", "2020-02-24T02:59:00", "NYC"],
+        ["skip", "CVPR Papers",       "2019-11-16T02:59:00", "NYC"],
+        ["skip", "CVPR Notification", "2020-02-24T02:59:00", "NYC"],
 
-        ["####", "LREC Papers",     "2019-11-25T23:59:00", "AOE"],
-        ["####", "LREC Notifications", "", "AOE"],
+        ["skip", "LREC Papers",     "2019-11-25T23:59:00", "AOE"],
+        ["skip", "LREC Notifications", "", "AOE"],
 
         ["ACL Papers",       "2019-12-09T23:59:00", "AOE"],
         ["ACL Response",     "2020-02-18T23:59:00", "AOE"],
         ["ACL Notification", "2020-04-03T23:59:00", "AOE"],
 
         ["COLING Papers",       "2020-04-08T23:59:00", "AOE"],
-        ["####", "COLING Response",     "2020-04-08T23:59:00", "AOE"],
+        ["skip", "COLING Response",     "2020-04-08T23:59:00", "AOE"],
         ["COLING Notification", "2020-06-10T23:59:00", "AOE"],
         
-        ["####", "ICML Abstracts",    "2020-01-31T23:59:00", "AOE"],
-        ["####", "ICML Papers",       "2020-02-07T23:59:00", "AOE"],
-        ["####", "ICML Response",     "2020-04-08T23:59:00", "AOE"],
-        ["####", "ICML Notification", "2020-05-09T23:59:00", "AOE"],
+        ["skip", "ICML Abstracts",    "2020-01-31T23:59:00", "AOE"],
+        ["skip", "ICML Papers",       "2020-02-07T23:59:00", "AOE"],
+        ["skip", "ICML Response",     "2020-04-08T23:59:00", "AOE"],
+        ["skip", "ICML Notification", "2020-05-09T23:59:00", "AOE"],
 
-        ["####", "IJCAI Abstracts",    "2020-01-15T23:59:00", "AOE"],
-        ["####", "IJCAI Papers",       "2020-01-21T23:59:00", "AOE"],
-        ["####", "IJCAI Response",     "2020-03-25T23:59:00", "AOE"],
-        ["####", "IJCAI Notification", "2020-04-19T23:59:00", "AOE"],
+        ["skip", "IJCAI Abstracts",    "2020-01-15T23:59:00", "AOE"],
+        ["skip", "IJCAI Papers",       "2020-01-21T23:59:00", "AOE"],
+        ["skip", "IJCAI Response",     "2020-03-25T23:59:00", "AOE"],
+        ["skip", "IJCAI Notification", "2020-04-19T23:59:00", "AOE"],
 
-        ["####", "NSF Medium", "2019-09-30T12:00:00", "NYC"],
-        ["####", "NSF Small",  "2019-11-14T12:00:00", "NYC"],
-        ["####", "NSF GRFP Letters", "2019-11-01T17:00:00", "NYC"],
-        ["####", "Google FRA", "2019-09-30T16:00:00", "NYC"],
-        ["####", "Amazon FRA", "2019-10-05T03:59:00", "NYC"],
+        ["skip", "NSF Medium", "2019-09-30T12:00:00", "NYC"],
+        ["skip", "NSF Small",  "2019-11-14T12:00:00", "NYC"],
+        ["skip", "NSF GRFP Letters", "2019-11-01T17:00:00", "NYC"],
+        ["skip", "Google FRA", "2019-09-30T16:00:00", "NYC"],
+        ["skip", "Amazon FRA", "2019-10-05T03:59:00", "NYC"],
         
         ["KDD Papers",       "2020-02-13T23:59:00", "AOE"],
-        ["####", "KDD Response",     "2020-02-18T23:59:00", "AOE"],
+        ["skip", "KDD Response",     "2020-02-18T23:59:00", "AOE"],
         ["KDD Notification", "2020-05-15T23:59:00", "AOE"],
         
         ["IROS Papers",       "2020-03-01T23:59:00", "PST"],
-        ["####", "IROS Response",     "2020-02-18T23:59:00", "PST"],
+        ["skip", "IROS Response",     "2020-02-18T23:59:00", "PST"],
         ["IROS Notification", "2020-06-30T23:59:00", "PST"],
         
         ["AACL Papers",       "2020-06-26T23:59:00", "AOE"],
-        ["####", "AACL Response",     "2020-02-18T23:59:00", "AOE"],
+        ["skip", "AACL Response",     "2020-02-18T23:59:00", "AOE"],
         ["AACL Notification", "2020-09-11T23:59:00", "AOE"],
 
         ["EMNLP Papers",       "2020-05-11T23:59:00", "AOE"],
@@ -74,6 +74,6 @@
         
         ["NSF FW-HTF", "2020-03-09T17:00:00", "NYC"],
      
-        ["####", "Name", "Date-Time", "TimeZone"]
+        ["skip", "Name", "Date-Time", "TimeZone"]
     ]
 }
